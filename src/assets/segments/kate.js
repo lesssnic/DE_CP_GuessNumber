@@ -1,13 +1,17 @@
-
-export function validateNumber (number) {
-    console.log('validateNumber');
-//    на число, и целое ли оно больше нуля и не больше 200 return Boolean;
-
+export function validateNumber(number) {
+    if (typeof number !== 'number' || number <= 0 || number > 200 || !Number.isInteger(number)) {
+        return 'false'
+    }
+    return 'true'
 }
+console.log(validateNumber(10));
 
-
-export function getRandomNumber (min, max) {
-    console.log('getRandowmNumber');
-//   if (validatorNumber (min), validatorNumber (max)) {return    генерируем случайное число из диапозона }else return ‘Error’
-
+export function getRandomNumber(min, max) {
+    const number = Math.ceil(Math.random() * (max - min) + min);
+    if (validateNumber(min) && validateNumber(max)) {
+        return number;
+    } else {
+        return 'error'
+    }
 }
+console.log(getRandomNumber(1, 200));
