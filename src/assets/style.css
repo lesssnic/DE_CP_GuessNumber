@@ -1,19 +1,75 @@
-#someOut{
+#someOut {
     margin-right: 10px;
 }
-#main{
-    text-align: center;
+
+h1 {
+    font-size: 40px;
 }
-#generator{
+
+body {
+    background-image: url('/bg.jpg');
+    font-family: URW Chancery L, cursive;
+}
+
+#container {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+#main {
+    background-color: #fdfaed;
+    width: 550px;
+    height: 450px;
+    border: 3px solid #b89831;
+    text-align: center;
+    padding: 7%;
+    margin: auto;
+    margin-top: 5%;
+    border-radius: 50px;
+}
+
+#guessNumber {
+    border: 1px solid #61da61;
+    background-color: #61da61;
+    border-radius: 5px;
+    font-size: 13px
+}
+
+#generator {
     margin-left: 5px;
-    border: 1px solid white;
+    border: 1px solid #fccf3e;
+    background-color: #fccf3e;
+    border-radius: 5px;
+    font-size: 13px
 }
-#exit{
-   display:block;
-   position: relative;
-   border: 1px solid white;
-   margin: 10px auto;
+
+#exit {
+    display: block;
+    position: relative;
+    border: 1px solid #f25757;
+    margin: 10px auto;
+    color: white;
+    background-color: #f25757;
+    border-radius: 5px;
+    font-size: 13px
 }
-.enterValues{
+
+.enterValues {
     text-align: center;
+    border-radius: 5px;
+}
+
+.userNumber {
+    text-align: center;
+    border-radius: 5px;
+}
+
+input[type=button]:hover {
+    color: rgb(0, 68, 255);
+    border-color: red;
+}
+
+input[type=button]:active {
+    color: rgb(255, 255, 255);
 }
