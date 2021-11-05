@@ -7,17 +7,19 @@ h1 {
 }
 
 body {
-    background-image: url('/bg.jpg');
+    background-image: url(/images/image1.jfif);
     font-family: URW Chancery L, cursive;
 }
 
 #container {
+  
     justify-content: center;
     text-align: center;
     align-items: center;
 }
 
 #main {
+    position: relative;
     background-color: #fdfaed;
     width: 550px;
     height: 450px;
@@ -30,7 +32,7 @@ body {
 }
 
 #guessNumber {
-    border: 1px solid #61da61;
+    border: none;
     background-color: #61da61;
     border-radius: 5px;
     font-size: 13px
@@ -38,26 +40,29 @@ body {
 
 #generator {
     margin-left: 5px;
-    border: 1px solid #fccf3e;
     background-color: #fccf3e;
     border-radius: 5px;
-    font-size: 13px
+    font-size: 13px;
+    border: none;
 }
 
-#exit {
-    display: block;
-    position: relative;
-    border: 1px solid #f25757;
-    margin: 10px auto;
-    color: white;
-    background-color: #f25757;
+ #exit {
+    margin-top: 10px;
+    background-color:rgb(255, 100, 100);
     border-radius: 5px;
-    font-size: 13px
-}
+    font-size: 13px;
+    border: none;
+    position: absolute;
+    top: 15px;
+    right:50px;
+
+} 
 
 .enterValues {
     text-align: center;
     border-radius: 5px;
+width: 160px;
+
 }
 
 .userNumber {
@@ -65,11 +70,17 @@ body {
     border-radius: 5px;
 }
 
-input[type=button]:hover {
+button:hover{
     color: rgb(0, 68, 255);
     border-color: red;
-}
-
-input[type=button]:active {
+    }
+button:active{
     color: rgb(255, 255, 255);
+}
+button{
+    width: 100px;
+    height: 40px;
+}
+#hiding{
+  /*   display: none; */
 }

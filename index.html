@@ -20,20 +20,21 @@
             <h4>
                 Для начала выбери диапазон от 0 до 200.
             </h4>
-            <input type="number" min="0" class="enterValues" placeholder="Минимальное число">
-            <input type="number" max="200" class="enterValues" placeholder="Максимальное число">
+            <input type="number" min="0" max="200" class="enterValues" placeholder="Минимальное число">
+            <input type="number" min="0" max="200" class="enterValues" placeholder="Максимальное число">
             <p id="text1">
-                <input type="button" id="generator" value="Сгенерировать число">
-            </p>
-
+                <button id="generator">Сгенерировать число</button>
+             </p>
+<div id="hiding">
             <output id="someOut"> <b>Введи значение в поле снизу и попробуй угадать число.</b></output>
             <br>
             <br>
             <input type="number" class='userNumber'>
-            <input type="button" id="guessNumber" value="Угадать число">
-            <br>
-
-            <input type="button" id="exit" value="Выход">
+            <button id="guessNumber">Угадать число</button>
+         <br>
+</div>
+<button id="exit">Сброс</button>
+        
         </div>
     </div>
     <script src="/src/assets/app.js"></script>
