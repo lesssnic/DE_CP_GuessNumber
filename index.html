@@ -9,34 +9,26 @@
 </head>
 
 <body>
-    <div id="container">
-        <div id="main">
-            <h1>
-                Guess The Number
-            </h1>
-            <h3>
-                Привет, давай сыграем в простую игру. У тебя есть <span> 5 </span> попыток чтоб угадать загаданное мной число.
-            </h3>
-            <h4>
-                Для начала выбери диапазон от 0 до 200.
-            </h4>
-            <input type="number" min="0" max="200" class="enterValues" placeholder="Минимальное число">
-            <input type="number" min="0" max="200" class="enterValues" placeholder="Максимальное число">
+<div id="main">
+            <h1> Guess The Number</h1>
+            <h3> Привет, давай сыграем в простую игру. У тебя есть <span> 5 </span> попыток чтоб угадать загаданное мной число.</h3>
+            <h4> Для начала выбери диапазон от 0 до 200.</h4>
+            <input type="number" min="0" max="200" class="input_list" placeholder="Минимальное число">
+            <input type="number" min="0" max="200" class="input_list" placeholder="Максимальное число">
             <p id="text1">
-                <button id="generator">Сгенерировать число</button>
+          <button id="generator" class="buttons_list">Сгенерировать число</button>
              </p>
 <div id="hiding">
             <output id="someOut"> <b>Введи значение в поле снизу и попробуй угадать число.</b></output>
             <br>
             <br>
-            <input type="number" class='userNumber'>
-            <button id="guessNumber">Угадать число</button>
+            <input type="number" class='input_list'>
+            <button class="buttons_list" id="guessNumber">Угадать число</button>
          <br>
 </div>
-<button id="exit">Сброс</button>
+<button id="exit" class="buttons_list">Сброс</button>
         
         </div>
-    </div>
     <script src="/src/assets/app.js"></script>
 </body>
 

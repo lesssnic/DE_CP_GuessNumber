@@ -1,33 +1,32 @@
-#someOut {
-    margin-right: 10px;
-}
-
-h1 {
-    font-size: 40px;
-}
-
-body {
-    background-image: url(/images/image1.jfif);
-    font-family: URW Chancery L, cursive;
-}
-
-#container {
-  
+html {
+     height: 100%; 
+      font-family: URW Chancery L, cursive;
+    } 
+ body {
+    min-height: 100vh;
+    background : linear-gradient(45deg, rgba(238, 207, 186, 1),rgba(197, 221, 232, 0.3) );
+    display: flex;
     justify-content: center;
     text-align: center;
-    align-items: center;
+    align-items: center; 
+    }
+    
+#someOut {
+    margin-right: 10px;
+    width: 168px;
+    height: 46px;
 }
-
 #main {
+    background : linear-gradient(45deg, rgba(238, 207, 186, 1) , rgba(197, 221, 232, 0.9) ); 
+ /*   box-shadow: 2px 2px 2px 1px rgba(197, 221, 232, 0.3);  */
     position: relative;
-    background-color: #fdfaed;
+    background-color: #fff4fa; 
     width: 550px;
     height: 450px;
-    border: 3px solid #b89831;
+    border: 1px solid rgb(97, 97, 97);
     text-align: center;
-    padding: 7%;
+    padding: 6%;
     margin: auto;
-    margin-top: 5%;
     border-radius: 50px;
 }
 
@@ -44,13 +43,13 @@ body {
     border-radius: 5px;
     font-size: 13px;
     border: none;
+    width: 168px;
+    height: 46px;
 }
 
  #exit {
     margin-top: 10px;
     background-color:rgb(255, 100, 100);
-    border-radius: 5px;
-    font-size: 13px;
     border: none;
     position: absolute;
     top: 15px;
@@ -78,9 +77,20 @@ button:active{
     color: rgb(255, 255, 255);
 }
 button{
-    width: 100px;
+    width: 140px;
     height: 40px;
 }
-#hiding{
-  /*   display: none; */
+
+.input_list{
+    width: 168px;
+    height: 46px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+.buttons_list{
+    width: 176px;
+    height: 52px;
+    border-radius: 5px;
+    font-size: 13px;
+    opacity: 0.7;
 }
