@@ -1,0 +1,96 @@
+html {
+     height: 100%; 
+      font-family: URW Chancery L, cursive;
+    } 
+ body {
+    min-height: 100vh;
+    background : linear-gradient(45deg, rgba(238, 207, 186, 1),rgba(197, 221, 232, 0.3) );
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center; 
+    }
+    
+#someOut {
+    margin-right: 10px;
+    width: 168px;
+    height: 46px;
+}
+#main {
+    background : linear-gradient(45deg, rgba(238, 207, 186, 1) , rgba(197, 221, 232, 0.9) ); 
+ /*   box-shadow: 2px 2px 2px 1px rgba(197, 221, 232, 0.3);  */
+    position: relative;
+    background-color: #fff4fa; 
+    width: 550px;
+    height: 450px;
+    border: 1px solid rgb(97, 97, 97);
+    text-align: center;
+    padding: 6%;
+    margin: auto;
+    border-radius: 50px;
+}
+
+#guessNumber {
+    border: none;
+    background-color: #61da61;
+    border-radius: 5px;
+    font-size: 13px
+}
+
+#generator {
+    margin-left: 5px;
+    background-color: #fccf3e;
+    border-radius: 5px;
+    font-size: 13px;
+    border: none;
+    width: 168px;
+    height: 46px;
+}
+
+ #exit {
+    margin-top: 10px;
+    background-color:rgb(255, 100, 100);
+    border: none;
+    position: absolute;
+    top: 15px;
+    right:50px;
+
+} 
+
+.enterValues {
+    text-align: center;
+    border-radius: 5px;
+width: 160px;
+
+}
+
+.userNumber {
+    text-align: center;
+    border-radius: 5px;
+}
+
+button:hover{
+    color: rgb(0, 68, 255);
+    border-color: red;
+    }
+button:active{
+    color: rgb(255, 255, 255);
+}
+button{
+    width: 140px;
+    height: 40px;
+}
+
+.input_list{
+    width: 168px;
+    height: 46px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+.buttons_list{
+    width: 176px;
+    height: 52px;
+    border-radius: 5px;
+    font-size: 13px;
+    opacity: 0.7;
+}

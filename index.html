@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Guess Number</title>
-        <link rel="stylesheet" href="/src/assets/style.css">
-    </head>
-    <body>
-        <div id="main">
-    <h2>Привет, давай сыграем в простую игру. У тебя есть 10 попыток. Введи ниже ограничения и нажми кнопку "Сгенерировать". </h2>
-    <input type="number" class="enterValues" placeholder="Тут ввести min">
-    <input type="number" class="enterValues" placeholder="Тут ввести max">
-    <p id="text1">Генерация число для угадывания ->
-      <input type="button" id="generator" value="Сгенерировать">
-     </p>
-      <output id="someOut"> Введите значение в поле справа и попробуйте угадать число</output>
-    <input type="number">
-    <br>
-    </div>
-        <input type="button" id="exit" value="Выход">
-        <script src="/src/assets/app.js"></script>
-    </body>
-    </html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Number</title>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body>
+<div id="main">
+            <h1> Guess The Number</h1>
+            <h3> Привет, давай сыграем в простую игру. У тебя есть <span> 5 </span> попыток чтоб угадать загаданное мной число.</h3>
+            <h4> Для начала выбери диапазон от 0 до 200.</h4>
+            <input type="number" min="0" max="200" class="input_list" placeholder="Минимальное число">
+            <input type="number" min="0" max="200" class="input_list" placeholder="Максимальное число">
+            <p id="text1">
+          <button id="generator" class="buttons_list">Сгенерировать число</button>
+             </p>
+<div id="hiding">
+            <output id="someOut"> <b>Введи значение в поле снизу и попробуй угадать число.</b></output>
+            <br>
+            <br>
+            <input type="number" class='input_list'>
+            <button class="buttons_list" id="guessNumber">Угадать число</button>
+         <br>
+</div>
+<button id="exit" class="buttons_list">Сброс</button>
+        
+        </div>
+    <script src=""></script>
+</body>
+
+</html>
