@@ -27,3 +27,18 @@ function guessNumber() {
 function reset() {
     console.log('reset');
 }
+function validateNumber(number) {
+    if (typeof number !== 'number' || number < 0 || number > 200 || !Number.isInteger(number)) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function getRandomNumber(min, max) {
+    if (validateNumber(min) && validateNumber(max)) {
+        return Math.floor(Math.random() * (max - min) + min);
+    } else {
+        return null;
+    }
+}
