@@ -1,7 +1,7 @@
 
 const startGameButton = document.querySelector('#generator');
 const guessNumberButton = document.querySelector('#guess');
-const resetButton = document.querySelector('exit');
+const resetButton = document.querySelector('#exit');
     startGameButton.addEventListener('click', startGame);
     guessNumberButton.addEventListener('click', guessNumber);
     resetButton.addEventListener('click', reset);
