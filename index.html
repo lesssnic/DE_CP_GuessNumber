@@ -10,25 +10,29 @@
 </head>
 
 <body>
-<div id="main">
-            <h1> Guess The Number</h1>
-            <h3> Привет, давай сыграем в простую игру. У тебя есть <span> 5 </span> попыток чтоб угадать загаданное мной число.</h3>
+    <div id="main">
+        <h1> Guess The Number</h1>
+        <div id="main_hide">
+            <h3> Привет, давай сыграем в простую игру. У тебя есть <span> 5 </span> попыток чтоб угадать загаданное мной
+                число.</h3>
             <h4> Для начала выбери диапазон от 0 до 200.</h4>
-            <input type="number" min="0" max="200" class="input_list" placeholder="Минимальное число">
-            <input type="number" min="0" max="200" class="input_list" placeholder="Максимальное число">
+            <input type="number" min="0" max="200" class="input_list" id="minValue" placeholder="Минимальное число">
+            <input type="number" min="0" max="200" class="input_list" id="maxValue" placeholder="Максимальное число">
             <p id="text1">
-          <button id="generator" class="buttons_list">Сгенерировать число</button>
-             </p>
-<div id="hiding">
+                <button id="generator" class="buttons_list">Сгенерировать число</button>
+            </p>
+            <p id="text2"></p>
+        </div>
+        <div id="hiding">
             <p id="output"> <b>Введи значение в поле снизу и попробуй угадать число.</b></p>
             <input type="number" class='input_list'>
             <button class="buttons_list" id="guess">Угадать число</button>
-         <br>
-</div>
-<button id="exit" class="buttons_list">Сброс</button>
-        
+            <br>
         </div>
-    <script src=""></script>
+        <button id="exit" class="buttons_list">Сброс</button>
+
+    </div>
+    <script src="./src/app.js"></script>
 </body>
 
 </html>
