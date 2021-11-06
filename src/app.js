@@ -12,17 +12,20 @@ const max = document.querySelector('#maxValue');
 const outputtterError = document.querySelector('#text2');
 
 function startGame() {
-    if (Number(min.value) >= Number(max.value)) {
+    console.log(Number(min.value), Number(max.value));
+    console.log('start');
+    if (Number(min.value) >= Number(max.value) || (min.value < 0 || max.value < 0) || (min.value > 200 || max.value > 200)) {
         return outputtterError.innerHTML = 'Ваш диапазон задан неверно!';
     } else {
         hider.style.display = 'none';
         hider2.style.display = 'block';
+        return getRandomNumber(Number(min.value), Number(max.value));
     }
-    console.log(Number(min.value), Number(max.value));
-    console.log('start');
+
 }
 
 function guessNumber() {
+
     console.log('guess');
 }
 
