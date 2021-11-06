@@ -26,8 +26,9 @@ html {
 }
 #output{
     display: inline-block;
+    cursor: default;
 }
-#guessNumber {background-color: #61da61;}
+#guess {background-color: #61da61;}
 #generator {background-color: #fccf3e}
  #exit {
     background-color:rgb(255, 100, 100);
@@ -56,4 +57,7 @@ html {
     }
 .buttons_list:active{
     color: rgb(255, 255, 255);
+}
+#hiding{
+    display: none;
 }
