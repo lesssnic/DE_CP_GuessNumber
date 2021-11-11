@@ -7,11 +7,10 @@ resetButton.addEventListener('click', reset);
 
 const hider = document.querySelector('#main_hide');
 const hider2 = document.querySelector('#hiding');
-const min = document.querySelector('#minValue');
-const max = document.querySelector('#maxValue');
+let min = document.querySelector('#minValue');
+let max = document.querySelector('#maxValue');
 const outputtterError = document.querySelector('#text2');
-const user = document.querySelector('#userInput');
-const buttons = document.querySelectorAll('.input_list')
+let user = document.querySelector('#userInput');
 
 let randRes = 0;
 let counter = 5;
@@ -51,10 +50,12 @@ function guessNumber() {
 }
 
 function reset() {
-    buttons = '';
     hider.style.display = 'block';
     hider2.style.display = 'none';
-    console.log('reset');
+    min.value = " ";
+    max.value = " ";
+    user.value = " ";
+    finalOut.innerHTML = " ";
 }
 
 function validateNumber(number) {
