@@ -16,7 +16,7 @@ let randRes = 0;
 let counter = 5;
 
 function startGame() {
-    if (Number(min.value) >= Number(max.value) || (min.value < 0 || max.value < 0) || (min.value > 200 || max.value > 200)) {
+       if(Number(min.value) >= Number(max.value) || validateNumber(Number(min.value))|| validateNumber(Number(max.value))){
         return outputtterError.innerHTML = 'Ваш диапазон задан неверно!';
     } else {
         hider.style.display = 'none';
@@ -60,14 +60,14 @@ function reset() {
 
 function validateNumber(number) {
     if (typeof number !== 'number' || number < 0 || number > 200 || !Number.isInteger(number)) {
-        return false;
-    } else {
         return true;
+    } else {
+        return false;
     }
 }
 
 function getRandomNumber(min, max) {
-    if (validateNumber(min) && validateNumber(max)) {
+    if (!(validateNumber(min) && validateNumber(max))) {
         return Math.floor(Math.random() * (max - min) + min);
     } else {
         return null;
