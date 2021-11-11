@@ -7,33 +7,33 @@ resetButton.addEventListener('click', reset);
 
 const hider = document.querySelector('#main_hide');
 const hider2 = document.querySelector('#hiding');
-const min = document.querySelector('#minValue');
-const max = document.querySelector('#maxValue');
+let min = document.querySelector('#minValue');
+let max = document.querySelector('#maxValue');
 const outputtterError = document.querySelector('#text2');
-const user = document.querySelector('#userInput');
+let user = document.querySelector('#userInput');
 
 let randRes = 0;
 let counter = 5;
 
 function startGame() {
-    if (Number(min.value) >= Number(max.value) || (min.value < 0 || max.value < 0) || (min.value > 200 || max.value > 200)) {
+       if(Number(min.value) >= Number(max.value) || validateNumber(Number(min.value))|| validateNumber(Number(max.value))){
         return outputtterError.innerHTML = 'Ваш диапазон задан неверно!';
     } else {
         hider.style.display = 'none';
         hider2.style.display = 'block';
-        const random = getRandomNumber(Number(min.value), Number(max.value));
-        console.log(random);
-        randRes = random;
+        randRes = getRandomNumber(Number(min.value), Number(max.value));
+        console.log(randRes);
     }
 }
 
 function guessNumber() {
     if (counter > 1) {
+        let UserNumber = Number(user.value);
         switch (true) {
-            case user.value < randRes:
+            case UserNumber < randRes:
                 finalOut.innerHTML = "Значение меньше заданного!";
                 break;
-            case user.value > randRes:
+            case UserNumber > randRes:
                 finalOut.innerHTML = "Значение больше заданного!";
                 break;
             default:
@@ -50,19 +50,24 @@ function guessNumber() {
 }
 
 function reset() {
-    console.log('reset');
+    hider.style.display = 'block';
+    hider2.style.display = 'none';
+    min.value = " ";
+    max.value = " ";
+    user.value = " ";
+    finalOut.innerHTML = " ";
 }
 
 function validateNumber(number) {
     if (typeof number !== 'number' || number < 0 || number > 200 || !Number.isInteger(number)) {
-        return false;
-    } else {
         return true;
+    } else {
+        return false;
     }
 }
 
 function getRandomNumber(min, max) {
-    if (validateNumber(min) && validateNumber(max)) {
+    if (!(validateNumber(min) && validateNumber(max))) {
         return Math.floor(Math.random() * (max - min) + min);
     } else {
         return null;
