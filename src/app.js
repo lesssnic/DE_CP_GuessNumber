@@ -11,6 +11,7 @@ const min = document.querySelector('#minValue');
 const max = document.querySelector('#maxValue');
 const outputtterError = document.querySelector('#text2');
 const user = document.querySelector('#userInput');
+const buttons = document.querySelectorAll('.input_list')
 
 let randRes = 0;
 let counter = 5;
@@ -21,19 +22,19 @@ function startGame() {
     } else {
         hider.style.display = 'none';
         hider2.style.display = 'block';
-        const random = getRandomNumber(Number(min.value), Number(max.value));
-        console.log(random);
-        randRes = random;
+        randRes = getRandomNumber(Number(min.value), Number(max.value));
+        console.log(randRes);
     }
 }
 
 function guessNumber() {
     if (counter > 1) {
+        let UserNumber = Number(user.value);
         switch (true) {
-            case user.value < randRes:
+            case UserNumber < randRes:
                 finalOut.innerHTML = "Значение меньше заданного!";
                 break;
-            case user.value > randRes:
+            case UserNumber > randRes:
                 finalOut.innerHTML = "Значение больше заданного!";
                 break;
             default:
@@ -50,6 +51,9 @@ function guessNumber() {
 }
 
 function reset() {
+    buttons = '';
+    hider.style.display = 'block';
+    hider2.style.display = 'none';
     console.log('reset');
 }
 
