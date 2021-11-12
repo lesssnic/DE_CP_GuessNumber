@@ -9,7 +9,7 @@ const hider = document.querySelector('#main_hide');
 const hider2 = document.querySelector('#hiding');
 let min = document.querySelector('#minValue');
 let max = document.querySelector('#maxValue');
-const outputtterError = document.querySelector('#text2');
+let outputtterError = document.querySelector('#text2');
 let user = document.querySelector('#userInput');
 
 let randRes = 0;
@@ -52,10 +52,12 @@ function guessNumber() {
 function reset() {
     hider.style.display = 'block';
     hider2.style.display = 'none';
-    min.value = " ";
-    max.value = " ";
-    user.value = " ";
-    finalOut.innerHTML = " ";
+    min.value = "";
+    max.value = "";
+    user.value = "";
+    finalOut.innerHTML = "";
+    outputtterError.innerHTML = "";
+    guessNumberButton.disabled = false;
 }
 
 function validateNumber(number) {

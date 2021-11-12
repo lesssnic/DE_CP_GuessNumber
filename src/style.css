@@ -61,3 +61,6 @@ html {
 #hiding{
     display: none;
 }
+button[disabled]:hover {
+    color: rgba(128,128,128,0.5);
+}
