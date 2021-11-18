@@ -4,14 +4,13 @@ html {
     } 
  body {
     min-height: 100vh;
-    background: rgb(165, 211, 211);
+    background: #f2eafd;
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center; 
     }
 #main {
-    background: rgb(165, 211, 211);
     position: relative;
     width: 40%;
     height: 40%;
@@ -31,14 +30,14 @@ h1{color: #A966F5;}
     background-color: #CA9CFF ; 
     cursor : pointer}
  #exit {
-    background-color:#EADAFF;
+    background-color:#A966F5;
     position: absolute;
     bottom: 25px;
     right: 50px;
     width: 32px;
     height: 32px;
     border: 0;
-    color: black;
+    color: rgb(255, 255, 255);
     cursor : pointer;
 } 
 .input_list{
@@ -48,6 +47,7 @@ h1{color: #A966F5;}
     font-size: 13px;
     text-align: center;
     background-color: #EADAFF;
+    border: hidden;
 }
 .buttons_list{
     width: 176px;
@@ -68,7 +68,7 @@ a{
     position: absolute;
     bottom: 25px;
     right:100px;
-    color: #EADAFF;
+    color: #A966F5;
     text-decoration: none;
 }
 #hiding{
@@ -89,12 +89,13 @@ html.dark, .dark body, .dark #main {
 .dark h1{
     color: #7700FF;
 }
-.dark #generator , .dark #guess {
+.dark #generator , .dark #guess, .dark #exit {
     background-color:#7700FF;
     color: #fff;
 }
 .dark .input_list {
     background-color:#332643;
     color: #fff;
+    border: 3px solid #7700FF;
 }
 .dark .input_list::-webkit-input-placeholder { color:#fff; } 

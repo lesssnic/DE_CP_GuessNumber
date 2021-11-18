@@ -21,7 +21,7 @@ addDarkClassToHTML();
 function startGame() {
     switch (true) {
         case min.value == '' || max.value == '':
-            outputterError.innerHTML = 'Вы не заполнили поле';
+            outputterError.innerHTML = 'Ты не заполнили поле';
             break;
         case Number(min.value) >= Number(max.value):
             outputterError.innerHTML = 'Минимальное значение больше максимального или равно ему!';
@@ -37,33 +37,33 @@ function startGame() {
             hider2.style.display = 'block';
             resetButton.disabled = false;
             randRes = getRandomNumber(Number(min.value), Number(max.value));
-            document.getElementById('output').innerHTML = `Введите значение из заданного вами диапазона: от ${min.value} до ${max.value}`
+            document.getElementById('output').innerHTML = `Я загадал число. Тебе его нужно отгадать. Введи значение из заданного тобой диапазона: от ${min.value} до ${max.value}`
             console.log(randRes);
     }
 }
 
 function guessNumber() {
     if (counter > 1 && user.value == '') {
-        finalOut.innerHTML = "Ваше значение пустое! Введите значение из заданного диапазона!";
+        finalOut.innerHTML = "Твое значение пустое! Введи значение из заданного диапазона!";
     } else if (counter > 1) {
         counter--;
         let UserNumber = Number(user.value);
         createFinishing(counter);
         switch (true) {
             case UserNumber < randRes:
-                finalOut.innerHTML = `Значение меньше заданного! У вас остались ${counter} попытк${createFinishing(counter)}`;
+                finalOut.innerHTML = `Значение меньше заданного! У тебя остались ${counter} попытк${createFinishing(counter)}`;
                 break;
             case UserNumber > randRes:
-                finalOut.innerHTML = `Значение больше заданного! У вас остались ${counter} попытк${createFinishing(counter)}`;
+                finalOut.innerHTML = `Значение больше заданного! У тебя остались ${counter} попытк${createFinishing(counter)}`;
                 break;
             default:
-                finalOut.innerHTML = "Поздравляю, вы угадали число!";
+                finalOut.innerHTML = "Поздравляю, ты угадал число!";
                 guessNumberButton.disabled = true;
                 setTimeout(reset, 1500);
                 break;
         }
     } else {
-        finalOut.innerHTML = "Вы проиграли. У вас не осталось попыток!";
+        finalOut.innerHTML = "Ты проиграл. У тебя не осталось попыток!";
         guessNumberButton.disabled = true;
         setTimeout(reset, 1500);
     }
@@ -137,5 +137,5 @@ function addDarkClassToHTML() {
 }
 
 function testValidNum(number) {
-    return `Проверьте число ${number}. У вас оно, или меньше 0, или больше 200`;
+    return `Проверь число ${number}. У тебя оно, или меньше 0, или больше 200`;
 }
