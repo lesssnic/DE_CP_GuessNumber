@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess Number</title>
     <link rel="stylesheet" href="./src/style.css">
-    <script defer src="./src/app.js"></script>
+    <script defer src="./src/app.js">
+    </script>
 </head>
 
 <body>
@@ -16,24 +17,32 @@
             <h3> Привет, давай сыграем в простую игру. У тебя есть <span> 5 </span> попыток чтоб угадать загаданное мной
                 число.</h3>
             <h4> Для начала выбери диапазон от 0 до 200.</h4>
-            <input type="number" min="0" max="200" class="input_list" id="minValue" placeholder="Минимальное число">
+            <input type="number" min="0" max="200" class="input_list" id="minValue" placeholder="Минимальное число"
+                autofocus>
             <input type="number" min="0" max="200" class="input_list" id="maxValue" placeholder="Максимальное число">
             <p id="text1">
-                <button id="generator" class="buttons_list">Сгенерировать число</button>
+                <button id="generator" class="buttons_list"><b>Сгенерировать число</b></button>
             </p>
-            <p id="text2"></p>
+            <b>
+                <p id="text2"></p>
+            </b>
         </div>
         <div id="hiding">
-            <p id="output"> <b>Введи значение в поле снизу и попробуй угадать число.</b></p>
+            <b>
+                <p id="output"> </p><br>
+            </b>
             <input type="number" id="userInput" class='input_list'>
             <button class="buttons_list" id="guess">Угадать число</button>
             <br>
-            <p id="finalOut"></p>
+            <b>
+                <p id="finalOut"></p>
+            </b>
         </div>
-        <button id="exit" class="buttons_list" >Сброс</button>
-
+        <button id="exit" disabled> <i class="fas fa-sign-out-alt"></i></button>
+        <a href="#" class="themetoggle"><i class="fas fa-sun fa-2x" id="sun"></i> <i class="fas fa-moon fa-2x"
+                id="moon"></i></a>
     </div>
-    <script src="./src/app.js"></script>
+    <script src="https://kit.fontawesome.com/c0cde6c5bc.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
