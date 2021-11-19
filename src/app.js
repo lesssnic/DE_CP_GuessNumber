@@ -1,18 +1,17 @@
-const startGameButton = document.querySelector('#generator');
-const guessNumberButton = document.querySelector('#guess');
-const resetButton = document.querySelector('#exit');
 startGameButton.addEventListener('click', startGame);
 guessNumberButton.addEventListener('click', guessNumber);
 resetButton.addEventListener('click', reset);
+themeButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (localStorage.getItem('theme') === 'dark') {
+        localStorage.removeItem('theme');
+    }
+    else {
+        localStorage.setItem('theme', 'dark')
+    }
+    addDarkClassToHTML()
+});
 
-const hider = document.querySelector('#main_hide');
-const hider2 = document.querySelector('#hiding');
-let min = document.querySelector('#minValue');
-let max = document.querySelector('#maxValue');
-let outputterError = document.querySelector('#text2');
-let user = document.querySelector('#userInput');
-const sun = document.querySelector('#sun');
-const moon = document.querySelector('#moon');
 
 let randRes = 0;
 let counter = 5;
@@ -25,102 +24,69 @@ function startGame() {
             break;
         case Number(min.value) >= Number(max.value):
             outputterError.innerHTML = 'Минимальное значение больше максимального или равно ему!';
+            min.focus();
             break;
         case validateNumber(Number(min.value)):
-            outputterError.innerHTML = testValidNum(Number(min.value));
+            outputterError.innerHTML = `Проверь число ${min.value}. У тебя оно, или меньше 0, или больше 200`;
+            min.focus();
             break;
         case validateNumber(Number(max.value)):
-            outputterError.innerHTML = testValidNum(Number(max.value));
+            outputterError.innerHTML = `Проверь число ${max.value}. У тебя оно, или меньше 0, или больше 200`;
+            max.focus();
             break;
         default:
             hider.style.display = 'none';
             hider2.style.display = 'block';
             resetButton.disabled = false;
             randRes = getRandomNumber(Number(min.value), Number(max.value));
-            document.getElementById('output').innerHTML = `Я загадал число. Тебе его нужно отгадать. Введи значение из заданного тобой диапазона: от ${min.value} до ${max.value}`
-            console.log(randRes);
+            document.getElementById('output').innerHTML = `Я загадал число. Тебе его нужно отгадать. Введи значение из заданного тобой диапазона: от ${min.value} до ${max.value}`;
     }
 }
 
 function guessNumber() {
     if (counter > 1 && user.value == '') {
-        finalOut.innerHTML = "Твое значение пустое! Введи значение из заданного диапазона!";
+        finalOut.innerHTML = 'Твое значение пустое! Введи значение из заданного диапазона!';
     } else if (counter > 1) {
-        counter--;
-        let UserNumber = Number(user.value);
+        let userNumber = Number(user.value);
         createFinishing(counter);
         switch (true) {
-            case UserNumber < randRes:
+            case (userNumber > Number(max.value) || userNumber < Number(min.value)): finalOut.innerHTML = 'Число вне заданного диапазона';
+                break;
+            case userNumber < randRes:
+                counter--;
                 finalOut.innerHTML = `Значение меньше заданного! У тебя остались ${counter} попытк${createFinishing(counter)}`;
                 break;
-            case UserNumber > randRes:
+            case userNumber > randRes:
+                counter--;
                 finalOut.innerHTML = `Значение больше заданного! У тебя остались ${counter} попытк${createFinishing(counter)}`;
                 break;
             default:
-                finalOut.innerHTML = "Поздравляю, ты угадал число!";
+                finalOut.innerHTML = 'Поздравляю, ты угадал число!';
                 guessNumberButton.disabled = true;
                 setTimeout(reset, 1500);
                 break;
         }
     } else {
-        finalOut.innerHTML = "Ты проиграл. У тебя не осталось попыток!";
+        finalOut.innerHTML = 'Ты проиграл. У тебя не осталось попыток!';
         guessNumberButton.disabled = true;
         setTimeout(reset, 1500);
     }
     user.value = '';
 }
-
-function createFinishing(element) {
-    if (element == 4 || element == 3 || element == 2) {
-        return 'и';
-    }
-    else {
-        return 'а';
-    }
-}
-
 function reset() {
     hider.style.display = 'block';
     hider2.style.display = 'none';
     min.focus();
-    min.value = "";
-    max.value = "";
-    user.value = "";
-    finalOut.innerHTML = "";
-    outputterError.innerHTML = "";
+    min.value = '';
+    max.value = '';
+    user.value = '';
+    finalOut.innerHTML = '';
+    outputterError.innerHTML = '';
     guessNumberButton.disabled = false;
     counter = 5;
 }
 
-function validateNumber(number) {
-    if (typeof number !== 'number' || number < 0 || number > 200 || !Number.isInteger(number)) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function getRandomNumber(min, max) {
-    if (!(validateNumber(min) && validateNumber(max))) {
-        return Math.floor(Math.random() * (max - min) + min);
-    } else {
-        return null;
-    }
-}
-
-document.querySelector('.themetoggle').addEventListener('click', (event) => {
-    event.preventDefault();
-    if (localStorage.getItem('theme') === 'dark') {
-        localStorage.removeItem('theme');
-    }
-    else {
-        localStorage.setItem('theme', 'dark')
-    }
-    addDarkClassToHTML()
-});
-
 function addDarkClassToHTML() {
-    try {
         if (localStorage.getItem('theme') === 'dark') {
             document.querySelector('html').classList.add('dark');
             resetButton.classList.add('dark');
@@ -133,9 +99,4 @@ function addDarkClassToHTML() {
             sun.style.display = 'inline';
             moon.style.display = 'none';
         }
-    } catch (err) { }
-}
-
-function testValidNum(number) {
-    return `Проверь число ${number}. У тебя оно, или меньше 0, или больше 200`;
 }
